@@ -1,0 +1,66 @@
+version: '3.8'
+
+services:
+
+  # ── Aplikasi PHP ──
+  app:
+    build: .
+    container_name: toko-kayu-app
+    ports:
+      - "8080:80"
+    volumes:
+      - ./public/uploads:/var/www/html/public/uploads
+      - ./writable:/var/www/html/writable
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - toko-kayu-net
+    restart: unless-stopped
+
+  # ── Database MySQL ──
+  db:
+    image: mysql:8.0
+    container_name: toko-kayu-db
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: toko_kayu_kontan_jaya
+      MYSQL_USER: toko_user
+      MYSQL_PASSWORD: toko_pass123
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./database/migrations/all_migrations.sql:/docker-entrypoint-initdb.d/01_migrations.sql
+      - ./database/seeds/demo_seed.sql:/docker-entrypoint-initdb.d/02_seeds.sql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot123"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - toko-kayu-net
+    restart: unless-stopped
+
+  # ── phpMyAdmin ──
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: toko-kayu-phpmyadmin
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: root123
+    depends_on:
+      - db
+    networks:
+      - toko-kayu-net
+    restart: unless-stopped
+
+volumes:
+  db_data:
+
+networks:
+  toko-kayu-net:
+    driver: bridge

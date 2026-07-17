@@ -1,0 +1,184 @@
+{
+  "info": {
+    "name": "Toko Kayu Kontan Jaya API",
+    "description": "Collection API untuk Sistem Manajemen Stok & Penjualan",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "base_url", "value": "http://localhost/toko-kayu-kontan-jaya/public", "type": "string" }
+  ],
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "url": "{{base_url}}/login",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"email\": \"owner@tokokayukontan.com\", \"password\": \"password123\"}"
+            }
+          }
+        },
+        {
+          "name": "Logout",
+          "request": { "method": "GET", "url": "{{base_url}}/logout" }
+        }
+      ]
+    },
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "List Products",
+          "request": { "method": "GET", "url": "{{base_url}}/api/products?page=1&limit=15" }
+        },
+        {
+          "name": "Get Product",
+          "request": { "method": "GET", "url": "{{base_url}}/api/products/1" }
+        },
+        {
+          "name": "Create Product",
+          "request": {
+            "method": "POST",
+            "url": "{{base_url}}/api/products",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sku\": \"MJK-010\",\n  \"name\": \"Meja Tamu Jati\",\n  \"category_id\": 1,\n  \"cost_price\": 500000,\n  \"selling_price\": 850000,\n  \"stock\": 5,\n  \"stock_minimum\": 2,\n  \"unit\": \"pcs\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Update Product",
+          "request": {
+            "method": "PUT",
+            "url": "{{base_url}}/api/products/1",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \"selling_price\": 1400000, \"stock_minimum\": 4 }"
+            }
+          }
+        },
+        {
+          "name": "Delete Product",
+          "request": { "method": "DELETE", "url": "{{base_url}}/api/products/1" }
+        },
+        {
+          "name": "Search Products (Typeahead)",
+          "request": { "method": "GET", "url": "{{base_url}}/pos/search?q=meja" }
+        }
+      ]
+    },
+    {
+      "name": "Transactions / POS",
+      "item": [
+        {
+          "name": "Checkout (Single Item)",
+          "request": {
+            "method": "POST",
+            "url": "{{base_url}}/pos/checkout",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "X-Requested-With", "value": "XMLHttpRequest" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customer_name\": \"Pak Hendra\",\n  \"payment_method\": \"cash\",\n  \"payment_amount\": 1500000,\n  \"cart\": [\n    { \"product_id\": 1, \"quantity\": 1, \"unit_price\": 1350000 }\n  ]\n}"
+            }
+          }
+        },
+        {
+          "name": "Checkout (Multi Item)",
+          "request": {
+            "method": "POST",
+            "url": "{{base_url}}/pos/checkout",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "X-Requested-With", "value": "XMLHttpRequest" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customer_name\": \"Bu Rina\",\n  \"payment_method\": \"transfer\",\n  \"payment_amount\": 2100000,\n  \"cart\": [\n    { \"product_id\": 1, \"quantity\": 1, \"unit_price\": 1350000 },\n    { \"product_id\": 9, \"quantity\": 1, \"unit_price\": 450000 },\n    { \"product_id\": 6, \"quantity\": 1, \"unit_price\": 980000 }\n  ]\n}"
+            }
+          }
+        },
+        {
+          "name": "List Transactions",
+          "request": { "method": "GET", "url": "{{base_url}}/api/transactions?start_date=2024-01-01&end_date=2024-12-31" }
+        },
+        {
+          "name": "Get Transaction Detail",
+          "request": { "method": "GET", "url": "{{base_url}}/api/transactions/1" }
+        }
+      ]
+    },
+    {
+      "name": "Inventory",
+      "item": [
+        {
+          "name": "Stock In",
+          "request": {
+            "method": "POST",
+            "url": "{{base_url}}/api/inventory/stock-in",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \"product_id\": 1, \"quantity\": 10, \"reference_no\": \"PO-2024-001\", \"notes\": \"Restock dari supplier\" }"
+            }
+          }
+        },
+        {
+          "name": "Stock Out / Adjustment",
+          "request": {
+            "method": "POST",
+            "url": "{{base_url}}/api/inventory/stock-out",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \"product_id\": 1, \"quantity\": 2, \"type\": \"ADJUSTMENT\", \"notes\": \"Barang rusak\" }"
+            }
+          }
+        },
+        {
+          "name": "Get Stock Movements",
+          "request": { "method": "GET", "url": "{{base_url}}/api/inventory/movements?product_id=1&type=OUT" }
+        }
+      ]
+    },
+    {
+      "name": "Dashboard",
+      "item": [
+        {
+          "name": "Get Stats",
+          "request": { "method": "GET", "url": "{{base_url}}/api/dashboard/stats" }
+        },
+        {
+          "name": "Sales Trend (30 days)",
+          "request": { "method": "GET", "url": "{{base_url}}/api/dashboard/sales-trend" }
+        },
+        {
+          "name": "Top Products",
+          "request": { "method": "GET", "url": "{{base_url}}/api/dashboard/top-products" }
+        }
+      ]
+    },
+    {
+      "name": "Reports",
+      "item": [
+        {
+          "name": "Export CSV",
+          "request": { "method": "GET", "url": "{{base_url}}/reports/export-csv?start_date=2024-01-01&end_date=2024-12-31" }
+        },
+        {
+          "name": "Export PDF",
+          "request": { "method": "GET", "url": "{{base_url}}/reports/export-pdf?start_date=2024-01-01&end_date=2024-12-31" }
+        }
+      ]
+    }
+  ]
+}

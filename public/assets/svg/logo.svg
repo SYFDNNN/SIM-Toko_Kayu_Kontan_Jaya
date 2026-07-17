@@ -1,0 +1,16 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="200" height="200" rx="32" fill="#78350f"/>
+
+  <!-- Tree / Wood shape -->
+  <polygon points="100,30 160,140 40,140" fill="#fef3c7" opacity="0.95"/>
+
+  <!-- Trunk -->
+  <rect x="86" y="140" width="28" height="32" rx="6" fill="#d97706"/>
+
+  <!-- Ground line -->
+  <rect x="30" y="168" width="140" height="6" rx="3" fill="#fef3c7" opacity="0.6"/>
+
+  <!-- Text: TK -->
+  <text x="100" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#78350f">TK</text>
+</svg>

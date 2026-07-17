@@ -1,0 +1,154 @@
+<svg viewBox="0 0 1100 750" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif" font-size="11">
+  <rect width="1100" height="750" fill="#fefce8"/>
+  <text x="550" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#78350f">ERD — Toko Kayu Kontan Jaya</text>
+
+  <!-- USERS -->
+  <rect x="20" y="60" width="180" height="180" rx="8" fill="#fff7ed" stroke="#d97706" stroke-width="2"/>
+  <rect x="20" y="60" width="180" height="32" rx="8" fill="#d97706"/>
+  <text x="110" y="81" text-anchor="middle" fill="white" font-weight="bold">users</text>
+  <text x="30" y="112" fill="#374151">🔑 id (PK)</text>
+  <text x="30" y="130" fill="#374151">  name</text>
+  <text x="30" y="148" fill="#374151">  email (UNIQUE)</text>
+  <text x="30" y="166" fill="#374151">  password (bcrypt)</text>
+  <text x="30" y="184" fill="#374151">  role (owner|cashier)</text>
+  <text x="30" y="202" fill="#374151">  is_active</text>
+  <text x="30" y="220" fill="#374151">  created_at</text>
+
+  <!-- CATEGORIES -->
+  <rect x="240" y="60" width="170" height="150" rx="8" fill="#fff7ed" stroke="#d97706" stroke-width="2"/>
+  <rect x="240" y="60" width="170" height="32" rx="8" fill="#d97706"/>
+  <text x="325" y="81" text-anchor="middle" fill="white" font-weight="bold">categories</text>
+  <text x="250" y="112" fill="#374151">🔑 id (PK)</text>
+  <text x="250" y="130" fill="#374151">  name (UNIQUE)</text>
+  <text x="250" y="148" fill="#374151">  slug</text>
+  <text x="250" y="166" fill="#374151">  description</text>
+  <text x="250" y="184" fill="#374151">  created_at</text>
+
+  <!-- PRODUCTS -->
+  <rect x="460" y="60" width="200" height="290" rx="8" fill="#fff7ed" stroke="#78350f" stroke-width="3"/>
+  <rect x="460" y="60" width="200" height="32" rx="8" fill="#78350f"/>
+  <text x="560" y="81" text-anchor="middle" fill="white" font-weight="bold">products</text>
+  <text x="470" y="112" fill="#374151">🔑 id (PK)</text>
+  <text x="470" y="130" fill="#1d4ed8">🔗 category_id (FK)</text>
+  <text x="470" y="148" fill="#374151">  sku (UNIQUE)</text>
+  <text x="470" y="166" fill="#374151">  name</text>
+  <text x="470" y="184" fill="#374151">  description</text>
+  <text x="470" y="202" fill="#374151">  cost_price</text>
+  <text x="470" y="220" fill="#374151">  selling_price</text>
+  <text x="470" y="238" fill="#374151">  stock</text>
+  <text x="470" y="256" fill="#374151">  stock_minimum</text>
+  <text x="470" y="274" fill="#374151">  lead_time_days</text>
+  <text x="470" y="292" fill="#374151">  unit</text>
+  <text x="470" y="310" fill="#374151">  image</text>
+  <text x="470" y="328" fill="#374151">  is_active</text>
+
+  <!-- TRANSACTIONS -->
+  <rect x="460" y="400" width="200" height="250" rx="8" fill="#fff7ed" stroke="#d97706" stroke-width="2"/>
+  <rect x="460" y="400" width="200" height="32" rx="8" fill="#d97706"/>
+  <text x="560" y="421" text-anchor="middle" fill="white" font-weight="bold">transactions</text>
+  <text x="470" y="453" fill="#374151">🔑 id (PK)</text>
+  <text x="470" y="471" fill="#374151">  transaction_no (UNIQUE)</text>
+  <text x="470" y="489" fill="#1d4ed8">🔗 user_id (FK)</text>
+  <text x="470" y="507" fill="#374151">  customer_name</text>
+  <text x="470" y="525" fill="#374151">  subtotal</text>
+  <text x="470" y="543" fill="#374151">  total</text>
+  <text x="470" y="561" fill="#374151">  payment_method</text>
+  <text x="470" y="579" fill="#374151">  payment_amount</text>
+  <text x="470" y="597" fill="#374151">  status</text>
+  <text x="470" y="615" fill="#374151">  transaction_date</text>
+  <text x="470" y="633" fill="#374151">  created_at</text>
+
+  <!-- TRANSACTION_DETAILS -->
+  <rect x="720" y="400" width="180" height="160" rx="8" fill="#fff7ed" stroke="#d97706" stroke-width="2"/>
+  <rect x="720" y="400" width="180" height="32" rx="8" fill="#d97706"/>
+  <text x="810" y="421" text-anchor="middle" fill="white" font-weight="bold">transaction_details</text>
+  <text x="730" y="453" fill="#374151">🔑 id (PK)</text>
+  <text x="730" y="471" fill="#1d4ed8">🔗 transaction_id (FK)</text>
+  <text x="730" y="489" fill="#1d4ed8">🔗 product_id (FK)</text>
+  <text x="730" y="507" fill="#374151">  quantity</text>
+  <text x="730" y="525" fill="#374151">  unit_price</text>
+  <text x="730" y="543" fill="#374151">  subtotal</text>
+
+  <!-- STOCK_MOVEMENTS -->
+  <rect x="720" y="60" width="190" height="270" rx="8" fill="#fff7ed" stroke="#d97706" stroke-width="2"/>
+  <rect x="720" y="60" width="190" height="32" rx="8" fill="#d97706"/>
+  <text x="815" y="81" text-anchor="middle" fill="white" font-weight="bold">stock_movements</text>
+  <text x="730" y="112" fill="#374151">🔑 id (PK)</text>
+  <text x="730" y="130" fill="#1d4ed8">🔗 product_id (FK)</text>
+  <text x="730" y="148" fill="#1d4ed8">🔗 user_id (FK)</text>
+  <text x="730" y="166" fill="#374151">  type (IN|OUT|ADJ)</text>
+  <text x="730" y="184" fill="#374151">  quantity (±)</text>
+  <text x="730" y="202" fill="#374151">  stock_before</text>
+  <text x="730" y="220" fill="#374151">  stock_after</text>
+  <text x="730" y="238" fill="#374151">  reference_type</text>
+  <text x="730" y="256" fill="#374151">  reference_no</text>
+  <text x="730" y="274" fill="#374151">  notes</text>
+  <text x="730" y="292" fill="#374151">  created_at</text>
+
+  <!-- SETTINGS -->
+  <rect x="920" y="60" width="160" height="140" rx="8" fill="#f0fdf4" stroke="#059669" stroke-width="2"/>
+  <rect x="920" y="60" width="160" height="32" rx="8" fill="#059669"/>
+  <text x="1000" y="81" text-anchor="middle" fill="white" font-weight="bold">settings</text>
+  <text x="930" y="112" fill="#374151">🔑 id (PK)</text>
+  <text x="930" y="130" fill="#374151">  key (UNIQUE)</text>
+  <text x="930" y="148" fill="#374151">  value</text>
+  <text x="930" y="166" fill="#374151">  created_at</text>
+  <text x="930" y="184" fill="#374151">  updated_at</text>
+
+  <!-- AUDIT_LOGS -->
+  <rect x="920" y="230" width="160" height="190" rx="8" fill="#fdf4ff" stroke="#9333ea" stroke-width="2"/>
+  <rect x="920" y="230" width="160" height="32" rx="8" fill="#9333ea"/>
+  <text x="1000" y="251" text-anchor="middle" fill="white" font-weight="bold">audit_logs</text>
+  <text x="930" y="283" fill="#374151">🔑 id (PK)</text>
+  <text x="930" y="301" fill="#1d4ed8">🔗 user_id (FK, null)</text>
+  <text x="930" y="319" fill="#374151">  action</text>
+  <text x="930" y="337" fill="#374151">  table_name</text>
+  <text x="930" y="355" fill="#374151">  record_id</text>
+  <text x="930" y="373" fill="#374151">  old_values (JSON)</text>
+  <text x="930" y="391" fill="#374151">  new_values (JSON)</text>
+  <text x="930" y="409" fill="#374151">  created_at</text>
+
+  <!-- SUPPLIERS -->
+  <rect x="20" y="300" width="170" height="160" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+  <rect x="20" y="300" width="170" height="32" rx="8" fill="#3b82f6"/>
+  <text x="105" y="321" text-anchor="middle" fill="white" font-weight="bold">suppliers</text>
+  <text x="30" y="353" fill="#374151">🔑 id (PK)</text>
+  <text x="30" y="371" fill="#374151">  name</text>
+  <text x="30" y="389" fill="#374151">  phone</text>
+  <text x="30" y="407" fill="#374151">  email</text>
+  <text x="30" y="425" fill="#374151">  address</text>
+  <text x="30" y="443" fill="#374151">  created_at</text>
+
+  <!-- RELATIONSHIPS LINES -->
+  <!-- categories → products -->
+  <line x1="410" y1="135" x2="460" y2="135" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="415" y="130" font-size="10" fill="#6b7280">1</text>
+  <text x="440" y="130" font-size="10" fill="#6b7280">N</text>
+
+  <!-- users → transactions -->
+  <line x1="200" y1="140" x2="460" y2="510" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- users → stock_movements -->
+  <line x1="200" y1="100" x2="720" y2="148" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- products → transaction_details -->
+  <line x1="660" y1="200" x2="810" y2="489" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- transactions → transaction_details -->
+  <line x1="660" y1="530" x2="720" y2="510" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="664" y="526" font-size="10" fill="#6b7280">1</text>
+  <text x="704" y="516" font-size="10" fill="#6b7280">N</text>
+
+  <!-- products → stock_movements -->
+  <line x1="720" y1="195" x2="660" y2="195" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="664" y="192" font-size="10" fill="#6b7280">N</text>
+  <text x="706" y="192" font-size="10" fill="#6b7280">1</text>
+
+  <!-- Legend -->
+  <rect x="20" y="700" width="400" height="40" rx="6" fill="white" stroke="#e5e7eb"/>
+  <line x1="35" y1="720" x2="65" y2="720" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="70" y="724" fill="#6b7280" font-size="10">Relasi FK</text>
+  <text x="150" y="724" fill="#374151" font-size="10">🔑 Primary Key</text>
+  <text x="240" y="724" fill="#1d4ed8" font-size="10">🔗 Foreign Key</text>
+  <text x="330" y="724" fill="#374151" font-size="10">Semua tabel: utf8mb4</text>
+</svg>
