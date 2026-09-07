@@ -1,0 +1,17 @@
+.git
+.github
+.env
+.env.*
+!.env.docker
+vendor/
+writable/cache/*
+writable/logs/*
+writable/session/*
+writable/debugbar/*
+writable/uploads/*
+public/null/*
+tests/
+docs/postman_collection.json
+*.log
+phpunit.xml
+build/

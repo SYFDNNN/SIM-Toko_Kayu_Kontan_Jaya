@@ -60,6 +60,9 @@ writable/session/*
 writable/uploads/*
 !writable/uploads/index.html
 
+# Runtime session files accidentally created under the public directory
+public/null/*
+
 writable/debugbar/*
 !writable/debugbar/index.html
 

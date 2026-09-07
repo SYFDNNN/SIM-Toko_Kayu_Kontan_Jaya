@@ -1,5 +1,8 @@
 ﻿FROM php:8.3-apache
 
+# Composer is required to install CodeIgniter and the application's PHP dependencies.
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+
 RUN apt-get update && apt-get install -y --no-install-recommends \
         libicu-dev \
         libzip-dev \
@@ -29,6 +32,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 WORKDIR /var/www/html
 
 COPY . /var/www/html/
+
+# Use the Docker-specific environment configuration inside the container.
+COPY env.docker /var/www/html/.env
+
+RUN composer install \
+        --no-dev \
+        --no-interaction \
+        --prefer-dist \
+        --optimize-autoloader
 
 RUN mkdir -p \
     /var/www/html/writable/cache \
