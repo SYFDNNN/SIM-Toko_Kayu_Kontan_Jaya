@@ -9,8 +9,6 @@ Sistem informasi penjualan dan manajemen inventori yang dikembangkan untuk memba
 **Jenis proyek:** Capstone Project — studi kasus digitalisasi UMKM
 **Judul:** Implementasi Point of Sale untuk Manajemen Persediaan Stok dan Pelaporan Penjualan Real-Time Berbasis Web
 
-**Tim pengembang:** Akhmad Syaifudin, Fani Agus Tina, dan Fahrul Islami Arsya Feri.
-
 Project ini membantu toko mengelola aktivitas harian secara lebih terstruktur, mulai dari pencatatan produk dan stok, proses penjualan di kasir, hingga pemantauan omzet dan laporan. Sistem dirancang untuk menjawab kebutuhan operasional UMKM yang membutuhkan data inventori dan transaksi yang mudah dipantau dalam satu aplikasi.
 
 ## Latar Belakang
@@ -25,13 +23,6 @@ Sebelum sistem dibuat, pencatatan stok, transaksi penjualan, dan rekap laporan m
 
 Kebutuhan sistem dikumpulkan melalui observasi alur kerja toko dan wawancara dengan pemilik serta karyawan Toko Kayu Kontan Jaya. Temuan tersebut kemudian diterjemahkan menjadi kebutuhan modul autentikasi, produk, inventori, POS, transaksi, laporan, pengaturan, dan API.
 
-### Peran dan kontribusi tim
-
-Pembagian kontribusi berdasarkan laporan capstone:
-
-- **Akhmad Syaifudin:** analisis kebutuhan, perancangan basis data, modul inventori, dan Reorder Point.
-- **Fani Agus Tina:** autentikasi, POS, dashboard, laporan, dan pengujian.
-- **Fahrul Islami Arsya Feri:** perancangan antarmuka, modul produk, pengaturan, dan dokumentasi.
 
 ### Status implementasi
 
