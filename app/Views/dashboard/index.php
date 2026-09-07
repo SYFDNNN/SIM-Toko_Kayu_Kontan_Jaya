@@ -1057,7 +1057,7 @@
         <rect x="8" y="15" width="8" height="2" rx="1" fill="#4A1F08"/>
       </svg>
     </div>
-    <div class="brand-name"><b>Toko Kayu</b><span>Kontan Jaya</span></div>
+    <div class="brand-name"><b>Toko Kayu</b><span>Kontan Jaya</span><small style="display:block;color:rgba(255,255,255,0.3);font-size:9px;margin-top:2px;">Demak, Jawa Tengah</small></div>
     <button class="toggle-btn" onclick="toggleSidebar()">
       <svg id="toggleIcon" style="width:16px;height:16px;transition:transform 250ms;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7"/>

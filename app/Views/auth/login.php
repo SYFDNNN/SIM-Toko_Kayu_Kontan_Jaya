@@ -254,6 +254,9 @@
     <p style="color:rgba(244,195,80,0.6);font-size:13px;margin-top:6px;font-weight:500;">
       Sistem Manajemen Stok & Penjualan
     </p>
+    <p style="color:rgba(255,255,255,0.42);font-size:11px;margin-top:8px;line-height:1.5;">
+      Jl. Kalijajar Singorejo, Demak, Jawa Tengah
+    </p>
   </div>
 
   <!-- Card -->
@@ -359,7 +362,7 @@
 
   <!-- Footer -->
   <div class="login-footer">
-    <p style="color:rgba(255,255,255,0.2);font-size:12px;">© 2026 Toko Kayu Kontan Jaya · Sistem Internal</p>
+    <p style="color:rgba(255,255,255,0.2);font-size:12px;">© 2026 Toko Kayu Kontan Jaya · Sistem Internal UMKM</p>
   </div>
 
 </div>

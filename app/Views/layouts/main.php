@@ -192,6 +192,7 @@
     <div class="brand-text">
       <div class="b1">Toko Kayu</div>
       <div class="b2">Kontan Jaya</div>
+      <div class="b2" style="margin-top:2px;color:rgba(255,255,255,0.28);">Demak, Jawa Tengah</div>
     </div>
     <button id="toggle-btn" onclick="toggleSidebar()">
       <svg id="toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">

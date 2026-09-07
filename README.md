@@ -1,6 +1,72 @@
 # SIM Toko Kayu Kontan Jaya
 
-Sistem informasi penjualan dan manajemen inventori untuk Toko Kayu Kontan Jaya. Aplikasi ini menyediakan dashboard, manajemen produk, stok masuk/keluar, POS kasir, transaksi, laporan, pengaturan toko, dan REST API.
+Sistem informasi penjualan dan manajemen inventori yang dikembangkan untuk membantu operasional UMKM Toko Kayu Kontan Jaya.
+
+## Tentang studi kasus
+
+**Mitra:** Toko Kayu Kontan Jaya
+**Alamat:** Jl. Kalijajar Singorejo, Kec. Demak, Kabupaten Demak, Jawa Tengah 59513
+**Jenis proyek:** Capstone Project — studi kasus digitalisasi UMKM
+**Judul:** Implementasi Point of Sale untuk Manajemen Persediaan Stok dan Pelaporan Penjualan Real-Time Berbasis Web
+
+**Tim pengembang:** Akhmad Syaifudin, Fani Agus Tina, dan Fahrul Islami Arsya Feri.
+
+Project ini membantu toko mengelola aktivitas harian secara lebih terstruktur, mulai dari pencatatan produk dan stok, proses penjualan di kasir, hingga pemantauan omzet dan laporan. Sistem dirancang untuk menjawab kebutuhan operasional UMKM yang membutuhkan data inventori dan transaksi yang mudah dipantau dalam satu aplikasi.
+
+## Latar Belakang
+
+Proyek ini dikembangkan untuk membantu UMKM Toko Kayu Kontan Jaya mengelola penjualan, persediaan, transaksi kasir, dan laporan secara lebih terstruktur melalui satu sistem berbasis web.
+
+### Masalah awal UMKM
+
+Sebelum sistem dibuat, pencatatan stok, transaksi penjualan, dan rekap laporan masih dilakukan secara manual menggunakan buku dan nota tulis tangan. Kondisi ini menyulitkan pemantauan stok secara real-time, meningkatkan risiko selisih data antara penjualan dan persediaan, serta memperlambat penyusunan laporan. Hak akses antara pemilik, admin, dan kasir juga belum terdokumentasi dengan jelas.
+
+### Proses pengumpulan kebutuhan
+
+Kebutuhan sistem dikumpulkan melalui observasi alur kerja toko dan wawancara dengan pemilik serta karyawan Toko Kayu Kontan Jaya. Temuan tersebut kemudian diterjemahkan menjadi kebutuhan modul autentikasi, produk, inventori, POS, transaksi, laporan, pengaturan, dan API.
+
+### Peran dan kontribusi tim
+
+Pembagian kontribusi berdasarkan laporan capstone:
+
+- **Akhmad Syaifudin:** analisis kebutuhan, perancangan basis data, modul inventori, dan Reorder Point.
+- **Fani Agus Tina:** autentikasi, POS, dashboard, laporan, dan pengujian.
+- **Fahrul Islami Arsya Feri:** perancangan antarmuka, modul produk, pengaturan, dan dokumentasi.
+
+### Status implementasi
+
+Sistem telah diimplementasikan sebagai aplikasi web dan diuji menggunakan Black Box Testing. Laporan mencatat seluruh skenario uji utama berstatus valid dan sistem dinyatakan layak digunakan oleh mitra. Repository ini menyediakan environment Docker untuk demo dan pengembangan lokal; status deployment production/cloud belum diklaim.
+
+### Dampak yang dapat dibuktikan
+
+Hasil pengujian dan implementasi menunjukkan bahwa sistem menyediakan pencatatan stok terintegrasi, peringatan Reorder Point, checkout yang memperbarui stok, nota transaksi, serta ekspor laporan CSV/PDF. Dampak yang didukung oleh laporan adalah peningkatan akurasi pencatatan, percepatan transaksi, dan kemudahan pemantauan; belum ada metrik kuantitatif sebelum-sesudah yang dilaporkan.
+
+## Screenshot aplikasi
+
+Screenshot berikut diambil dari Bab IV laporan capstone dan menampilkan hasil implementasi aplikasi:
+
+| Modul | Preview |
+| --- | --- |
+| Login | ![Halaman login](docs/screenshots/screen-6.png) |
+| Dashboard | ![Dashboard](docs/screenshots/screen-5.png) |
+| Produk | ![Manajemen produk](docs/screenshots/screen-4.png) |
+| Inventori & ROP | ![Inventori](docs/screenshots/screen-3.png) |
+| POS/Kasir | ![POS](docs/screenshots/screen-2.png) |
+| Transaksi & invoice | ![Transaksi](docs/screenshots/screen-1.png) |
+| Laporan | ![Laporan](docs/screenshots/screen-10.png) |
+| Pengaturan | ![Pengaturan](docs/screenshots/screen-11.png) |
+
+### Nilai yang diberikan
+
+- Mengurangi pencatatan stok dan transaksi secara manual.
+- Membantu pemilik memantau penjualan, laba, dan produk dengan stok rendah.
+- Mempercepat proses transaksi melalui modul POS kasir.
+- Menyediakan laporan penjualan yang dapat digunakan sebagai bahan evaluasi usaha.
+- Memisahkan akses berdasarkan peran owner, admin, dan kasir.
+
+## Pendekatan pengembangan
+
+Sistem dikembangkan menggunakan metode Waterfall dengan framework CodeIgniter 4, PHP, dan MySQL. Pengujian fungsional dilakukan menggunakan Black Box Testing. Untuk menjaga konsistensi stok ketika terjadi transaksi bersamaan, proses checkout menggunakan transaksi basis data dan row locking.
 
 ## Fitur utama
 
