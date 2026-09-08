@@ -24,6 +24,15 @@ Sebelum sistem dibuat, pencatatan stok, transaksi penjualan, dan rekap laporan m
 Kebutuhan sistem dikumpulkan melalui observasi alur kerja toko dan wawancara dengan pemilik serta karyawan Toko Kayu Kontan Jaya. Temuan tersebut kemudian diterjemahkan menjadi kebutuhan modul autentikasi, produk, inventori, POS, transaksi, laporan, pengaturan, dan API.
 
 
+### Kontribusi Saya
+
+Kontribusi saya yang tercatat pada repositori ini adalah:
+
+- Menyusun dokumentasi studi kasus UMKM, latar belakang masalah, proses pengumpulan kebutuhan, status implementasi, dan dampak sistem.
+- Menambahkan screenshot modul aplikasi dari laporan capstone ke repository agar fitur dapat ditinjau langsung.
+- Memperbarui identitas lokasi Toko Kayu Kontan Jaya pada halaman login dan dashboard.
+- Mendokumentasikan batasan keamanan `env.docker` untuk kebutuhan development/demo lokal.
+
 ### Status implementasi
 
 Sistem telah diimplementasikan sebagai aplikasi web dan diuji menggunakan Black Box Testing. Laporan mencatat seluruh skenario uji utama berstatus valid dan sistem dinyatakan layak digunakan oleh mitra. Repository ini menyediakan environment Docker untuk demo dan pengembangan lokal; status deployment production/cloud belum diklaim.
