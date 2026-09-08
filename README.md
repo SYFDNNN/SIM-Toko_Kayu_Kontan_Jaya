@@ -24,14 +24,35 @@ Sebelum sistem dibuat, pencatatan stok, transaksi penjualan, dan rekap laporan m
 Kebutuhan sistem dikumpulkan melalui observasi alur kerja toko dan wawancara dengan pemilik serta karyawan Toko Kayu Kontan Jaya. Temuan tersebut kemudian diterjemahkan menjadi kebutuhan modul autentikasi, produk, inventori, POS, transaksi, laporan, pengaturan, dan API.
 
 
-### Kontribusi Saya
+### Tim dan Kontribusi
 
-Kontribusi saya yang tercatat pada repositori ini adalah:
+Proyek SIM Toko Kayu Kontan Jaya dikembangkan oleh:
 
-- Menyusun dokumentasi studi kasus UMKM, latar belakang masalah, proses pengumpulan kebutuhan, status implementasi, dan dampak sistem.
-- Menambahkan screenshot modul aplikasi dari laporan capstone ke repository agar fitur dapat ditinjau langsung.
-- Memperbarui identitas lokasi Toko Kayu Kontan Jaya pada halaman login dan dashboard.
-- Mendokumentasikan batasan keamanan `env.docker` untuk kebutuhan development/demo lokal.
+- **Akhmad Syaifudin** — Full-Stack Web Developer / Pengembang Utama
+- **Fani Agustina** — Project Contributor / Co-Developer
+- **Fahrul Alamsyah** — Project Contributor / Co-Developer
+
+Pengembangan dilakukan secara kolaboratif sehingga beberapa tanggung jawab saling beririsan. Akhmad Syaifudin menjadi penanggung jawab utama implementasi teknis aplikasi web secara end-to-end. Fani Agustina dan Fahrul Alamsyah turut berkontribusi dalam analisis kebutuhan, perancangan sistem, dukungan implementasi fitur, evaluasi, pengujian, dokumentasi, dan penyempurnaan proyek.
+
+Cakupan kontribusi teknis tim meliputi:
+
+- Mengidentifikasi masalah dan kebutuhan operasional UMKM melalui observasi dan wawancara dengan mitra.
+- Merancang alur aplikasi dan struktur database untuk mengintegrasikan proses penjualan, persediaan, dan pelaporan.
+- Mengimplementasikan autentikasi dan pembatasan hak akses untuk peran `owner`, `admin`, dan `cashier`.
+- Mengembangkan dashboard penjualan dan inventori, termasuk ringkasan transaksi, tren penjualan, produk terlaris, serta indikator stok rendah.
+- Mengembangkan modul produk dan kategori, stok masuk, stok keluar, riwayat pergerakan stok, dan analisis Reorder Point.
+- Mengembangkan modul Point of Sale yang mencakup keranjang, checkout, pencatatan transaksi, pembaruan stok, dan invoice.
+- Mengembangkan laporan penjualan dengan filter periode serta ekspor CSV dan PDF.
+- Menyediakan REST API untuk produk, transaksi, inventori, dan data dashboard.
+- Menjaga konsistensi proses checkout menggunakan transaksi database dan row locking melalui `SELECT ... FOR UPDATE`.
+- Menyiapkan environment aplikasi menggunakan CodeIgniter 4, PHP, MySQL, Apache, phpMyAdmin, dan Docker Compose.
+- Melakukan Black Box Testing, debugging, evaluasi fitur, dan penyusunan dokumentasi proyek.
+
+Pembagian tanggung jawab utama:
+
+- **Akhmad Syaifudin:** memimpin dan mengerjakan pengembangan teknis aplikasi web, database, integrasi antarmodul, konfigurasi Docker, debugging, dan penyempurnaan sistem.
+- **Fani Agustina:** berkontribusi dalam analisis kebutuhan, perancangan alur sistem, dukungan implementasi fitur, pengujian fungsional, evaluasi, dan dokumentasi.
+- **Fahrul Alamsyah:** berkontribusi dalam perancangan sistem, validasi kebutuhan, dukungan implementasi fitur, pengujian fungsional, evaluasi hasil, dan dokumentasi.
 
 ### Status implementasi
 
